@@ -11,9 +11,10 @@ def configure_request(app):
     api_key = app.config['SOURCE_API_KEY']
     base_url = app.config['SOURCE_API_BASE_URL']
 
+
 def get_source(category):
     """
-    F
+    Funtion taking source arguments as categories
     :param category:
     :return:
     """
