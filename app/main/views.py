@@ -23,3 +23,13 @@ def index():
     return render_template('index.html', title = title, entertainment =entertainment.sources, general=general.sources,health=health.sources,
                            science=science.sources,technology=technology.sources)
 
+@main.route
+def source(id):
+    """
+    view sources page function returning the sources details page and its data
+
+    """
+    source = get_source(id)
+    title = f'{source.title}'
+
+    return render_template('source.html', title=title, source=source)

@@ -4,6 +4,10 @@ class Sources:
 
     """
     def __init__(self, id, name, description, url, category, language, country):
+        """
+        passing parameters into object Sources
+
+        """
         self.id = id
         self.name = name
         self.description = description
@@ -21,7 +25,11 @@ class Articles:
     # list item to hold articles
     all_articles = []
 
-    def __init__(self, source_id, source_name, author, title, description, url, urlToImage, publishedAt ):
+    def __init__(self, source_id, source_name, author, title, description, url, urlToImage, publishedAt):
+        """
+        Passing parameters into the source articles
+
+        """
         self.source_id = source_id
         self.source_name = source_name
         self.author = author
