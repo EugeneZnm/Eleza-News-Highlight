@@ -1,8 +1,8 @@
 from flask import render_template, request, redirect, url_for
-from ..requests import get_sources
+from ..requests import get_sources, get_source
+from . import main
 
 
-# from . import main
 # views
 @main.route('/')
 # view function

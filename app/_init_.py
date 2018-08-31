@@ -4,7 +4,10 @@ from flask_bootstrap import Bootstrap
 # import config options
 from config import config_options
 
+from flask import Flask
+
 bootstrap = Bootstrap()
+
 
 def create_app(config_name):
     """
@@ -38,3 +41,6 @@ def create_app(config_name):
     call function and pass app instance
     
     """
+    configure_request(app)
+
+    return app

@@ -57,6 +57,7 @@ def get_sources(category):
     # return list of movie objects
     return source_source
 
+
 def get_source(id):
     """
     function to return details of news source
