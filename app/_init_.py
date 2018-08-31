@@ -26,3 +26,9 @@ def create_app(config_name):
     
     """
 
+    from .main import main as main_blueprint
+
+    """
+    import instance created and registering blueprint method 
+    """
+    app.register_blueprint(main_blueprint)
