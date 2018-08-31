@@ -16,5 +16,13 @@ def create_app(config_name):
 
     app.config.from_object(config_options[config_name])
     """
-    import app configurations using fom object method
+    import app configurations using from object method
+    
     """
+
+    bootstrap.init_app(app)
+    """
+    initialising flask extension with init_app completing extension initialisation
+    
+    """
+
