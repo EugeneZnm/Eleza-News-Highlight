@@ -31,10 +31,3 @@ class Articles:
         self.urlToImage = urlToImage
         self.publishedAt = publishedAt
 
-     # Function to save all articles to article list
-     def save_articles(self):
-         """
-         saving articles to list all articles
-         :return:
-         """
-         Articles.all_articles.append(self)

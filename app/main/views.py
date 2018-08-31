@@ -22,3 +22,4 @@ def index():
     # result from get sources function passed to template
     return render_template('index.html', title = title, entertainment =entertainment.sources, general=general.sources,health=health.sources,
                            science=science.sources,technology=technology.sources)
+
