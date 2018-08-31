@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, url_for
-from ..requests import get_sources, get_source
+from ..request import get_sources, get_source
 from . import main
 
 
@@ -23,7 +23,6 @@ def index():
     """
     title = 'ELEZA - FRESH OFF THE PRESS'
 
-    # search_sources = request.args.get('source-query')
     # result from get sources function passed to template
     return render_template('index.html', title=title, entertainment=entertainment, general=general,
                            health=health, science=science, technology=technology)
@@ -38,4 +37,4 @@ def get_source(id):
     source = get_source(id)
     title = f'{source.title}'
 
-    return render_template('indexit a.html', title=title, source=source)
+    return render_template('index.html', title=title, source=source)

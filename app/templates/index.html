@@ -1,39 +1,40 @@
-<body>
-        <!-- Entertainment -->
-        <h3> Entertainment </h3>
-         <ul>
-            {% for entertainment_source in entertainment %}
-                <li>{{ entertainment_source.title}}</li>
-            {% endfor %}
-        </ul>
+{% import 'macros.html' as macro %}
+{% block content %}
 
-        <!-- General  -->
-        <h3> General </h3>
-         <ul>
-            {% for general_source in general %}
-                <li>{{ general_source.title}}</li>
-            {% endfor %}
-        </ul>
-        <!-- Health -->
-        <h3> Health </h3>
-         <ul>
-            {% for health_source in health %}
-                <li>{{ health_source.title}}</li>
-            {% endfor %}
-        </ul>
-        <!-- Science -->
-        <h3> Science </h3>
-         <ul>
-            {% for science_source in health %}
-                <li>{{ science_source.title}}</li>
-            {% endfor %}
-        </ul>
-        <!--Technology -->
-        <h3> Technology </h3>
-         <ul>
-            {% for health_source in health %}
-                <li>{{ health_source.title}}</li>
-            {% endfor %}
-        </ul>
+    <body>
+        <div class="row">
+            <!--Entertainment -->
+            <div class="col-md-3">
+                <h3> Entertainment </h3>
+                 <ul>
+                     <li>{{macro.displaySources(entertainment)}}</li>
+                </ul>
+            </div>
 
-</body>
+            <!-- General  -->
+            <div class="col-md-3">
+                <h3> General </h3>
+                 <ul>
+                        <li>{{macro.displaySources(general)}}</li>
+                </ul>
+            </div>
+
+            <!-- Health -->
+            <div class="col-md-3">
+            <h3> Health </h3>
+                 <ul>
+                     <li>{{macro.displaySources(health)}}</li>
+                </ul>
+            </div>
+
+            <!-- Science -->
+            <div class="col-md-3">
+                <h3> Science </h3>
+                 <ul>
+                     <li>{{macro.displaySources(science)}}</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+
+{% endblock %}

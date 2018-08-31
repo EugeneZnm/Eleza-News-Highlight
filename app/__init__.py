@@ -6,6 +6,7 @@ from config import config_options
 
 from flask import Flask
 
+
 bootstrap = Bootstrap()
 
 
@@ -36,7 +37,7 @@ def create_app(config_name):
     """
     app.register_blueprint(main_blueprint)
 
-    from .requests import configure_request
+    from .request import configure_request
     """
     call function and pass app instance
     
