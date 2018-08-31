@@ -18,16 +18,15 @@ def index():
     science = get_sources('science')
     technology = get_sources('technology')
     """
-    getting movies according to categories
+    getting sources according to categories
     
     """
     title = 'ELEZA - FRESH OFF THE PRESS'
 
     # search_sources = request.args.get('source-query')
     # result from get sources function passed to template
-    return render_template('index.html', title=title, entertainment=entertainment.sources, general=general.sources,
-                           health=health.sources,
-                           science=science.sources, technology=technology.sources)
+    return render_template('index.html', title=title, entertainment=entertainment, general=general,
+                           health=health, science=science, technology=technology)
 
 
 @main.route('/source/<int:id>')

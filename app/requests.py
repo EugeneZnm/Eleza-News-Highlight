@@ -10,8 +10,8 @@ base_url = None
 
 def configure_request(app):
     global api_key, base_url
-    api_key = app.config['SOURCE_API_KEY']
-    base_url = app.config['SOURCE_API_BASE_URL']
+    api_key = app.config['SOURCES_API_KEY']
+    base_url = app.config['SOURCES_API_BASE_URL']
 
 
 def get_sources(category):
@@ -84,7 +84,7 @@ def get_source(id):
         language = source_details_response.get('language')
         country = source_details_response.get('country')
 
-        source_object = Sources(id,name, description, url, category,language, country)
+        source_object = Sources(id, name, description, url, category, language, country)
 
     return source_object
 
