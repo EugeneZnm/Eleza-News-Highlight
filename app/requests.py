@@ -12,12 +12,38 @@ def configure_request(app):
     base_url = app.config['SOURCE_API_BASE_URL']
 
 
-def process_results()
+def process_results(source_list):
+    """
+    Function processing the movie result and transforms them to list of objects
+    :param source_list: l
+    ist of dictionaries containing source details
+    :return:
+    source_results, a list of source objects
+    """
+
+    source_source = []
+    """
+    list to store source objects
+    
+    """
+    for source_item in source_list:
+        """
+        loop through list of dictionaries using get method padsing in keys
+        to access values
+         
+        """
+        id = source_item.get('id')
+        name = source_item.get('name')
+        description = source_item.get('description')
+        url = source_item.get('url'')
+        category = source_item.get('category')
+        language = source_item.get('language')
+        country = source_item.get('country')
 
 
 def get_sources(category):
     """
-    Funtion taking source arguments as categories
+    Function taking source arguments as categories
 
     """
 
