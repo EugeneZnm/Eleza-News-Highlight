@@ -1,10 +1,12 @@
-from urllib.request import , json
+import urllib
+import urllib.request, json
 
 from .models import Sources
 
 api_key = None
 
 base_url = None
+
 
 def configure_request(app):
     global api_key, base_url
@@ -35,10 +37,17 @@ def process_results(source_list):
         id = source_item.get('id')
         name = source_item.get('name')
         description = source_item.get('description')
-        url = source_item.get('url'')
+        url = source_item.get('url')
         category = source_item.get('category')
         language = source_item.get('language')
         country = source_item.get('country')
+
+        source_object = Sources(id, name, description, url, category,language, country)
+        """
+        values used to create movie object 
+        
+        """
+        source_source.append(source_object)
 
 
 def get_sources(category):
@@ -68,7 +77,7 @@ def get_sources(category):
 
         source_source = None
 
-        if get_sources_response['sources']
+        if get_sources_response['sources']:
             """
             property sources used to check if response contains any data
             
