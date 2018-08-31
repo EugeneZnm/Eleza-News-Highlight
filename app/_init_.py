@@ -32,3 +32,9 @@ def create_app(config_name):
     import instance created and registering blueprint method 
     """
     app.register_blueprint(main_blueprint)
+
+    from .requests import configure_request
+    """
+    call function and pass app instance
+    
+    """

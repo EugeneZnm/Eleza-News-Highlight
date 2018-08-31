@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b38ee63c-e375-4007-ae94-88fb176c6180" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/_init_.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/_init_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/requests.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/requests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,20 +36,20 @@
         <counts>
           <entry key="gitignore" value="15" />
           <entry key="html" value="303" />
-          <entry key="py" value="5348" />
+          <entry key="py" value="5982" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="303" />
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="5348" />
+          <entry key="Python" value="5982" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46719682">
+    <splitter split-orientation="horizontal" split-proportion="0.5789037">
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="false">
@@ -119,7 +116,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/templates/footer.html">
               <provider selected="true" editor-type-id="text-editor" />
             </entry>
@@ -136,11 +133,15 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/_init_.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" selection-start-line="2" selection-end-line="2" />
+                <state relative-caret-position="236">
+                  <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+                  <folding>
+                    <element signature="e#0#37#0" expanded="true" />
+                    <marker date="1535719028611" expanded="true" signature="271:276" ph="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -202,7 +203,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="649" />
+    <option name="x" value="416" />
     <option name="y" value="24" />
     <option name="width" value="1250" />
     <option name="height" value="708" />
@@ -295,15 +296,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="649" y="24" width="1250" height="708" extended-state="0" />
-    <editor active="true" />
+    <frame x="416" y="24" width="1250" height="708" extended-state="0" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16445182" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16445182" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" weight="0.29655173" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.29655173" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -414,13 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/_init_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -447,6 +440,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/footer.html">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/_init_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+            <marker date="1535719028611" expanded="true" signature="271:276" ph="..." />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
