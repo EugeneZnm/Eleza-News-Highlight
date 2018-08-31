@@ -42,7 +42,7 @@ def process_results(source_list):
         language = source_item.get('language')
         country = source_item.get('country')
 
-        source_object = Sources(id, name, description, url, category,language, country)
+        source_object = Sources(id, name, description, url, category, language, country)
         """
         values used to create movie object 
         
@@ -92,3 +92,19 @@ def get_sources(category):
             """
     # return list of movie objects
     return source_source
+
+def get_source(id):
+    """
+    function to return details of news source
+    :param id:
+    :return:
+    """
+    get_source_details_url = base_url.format(id, api_key)
+
+    with urllib.request.urlopen(get_source_details_url) as url:
+        source_details_data = url.read()
+        source_details_response = json.loads(source_details_data)
+    """
+    creation of url and getting json data from url and converting it to dictionary
+    
+    """
