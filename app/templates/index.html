@@ -1,0 +1,39 @@
+<body>
+        <!-- Entertainment -->
+        <h3> Entertainment </h3>
+         <ul>
+            {% for entertainment_source in entertainment %}
+                <li>{{ entertainment_source.title}}</li>
+            {% endfor %}
+        </ul>
+
+        <!-- General  -->
+        <h3> General </h3>
+         <ul>
+            {% for general_source in general %}
+                <li>{{ general_source.title}}</li>
+            {% endfor %}
+        </ul>
+        <!-- Health -->
+        <h3> Health </h3>
+         <ul>
+            {% for health_source in health %}
+                <li>{{ health_source.title}}</li>
+            {% endfor %}
+        </ul>
+        <!-- Science -->
+        <h3> Science </h3>
+         <ul>
+            {% for science_source in health %}
+                <li>{{ science_source.title}}</li>
+            {% endfor %}
+        </ul>
+        <!--Technology -->
+        <h3> Technology </h3>
+         <ul>
+            {% for health_source in health %}
+                <li>{{ health_source.title}}</li>
+            {% endfor %}
+        </ul>
+
+</body>

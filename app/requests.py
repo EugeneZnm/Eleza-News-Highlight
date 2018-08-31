@@ -14,42 +14,6 @@ def configure_request(app):
     base_url = app.config['SOURCE_API_BASE_URL']
 
 
-def process_results(source_list):
-    """
-    Function processing the movie result and transforms them to list of objects
-    :param source_list: l
-    ist of dictionaries containing source details
-    :return:
-    source_results, a list of source objects
-    """
-
-    source_source = []
-    """
-    list to store source objects
-    
-    """
-    for source_item in source_list:
-        """
-        loop through list of dictionaries using get method padsing in keys
-        to access values
-         
-        """
-        id = source_item.get('id')
-        name = source_item.get('name')
-        description = source_item.get('description')
-        url = source_item.get('url')
-        category = source_item.get('category')
-        language = source_item.get('language')
-        country = source_item.get('country')
-
-        source_object = Sources(id, name, description, url, category, language, country)
-        """
-        values used to create movie object 
-        
-        """
-        source_source.append(source_object)
-
-
 def get_sources(category):
     """
     Function taking source arguments as categories
@@ -108,3 +72,55 @@ def get_source(id):
     creation of url and getting json data from url and converting it to dictionary
     
     """
+    source_object = None
+
+    if source_details_response:
+        id = source_details_response.get('id')
+        name = source_details_response.get('name')
+        description = source_details_response.get('description')
+        url = source_details_response.get('url')
+        category = source_details_response.get('category')
+        language = source_details_response.get('language')
+        country = source_details_response.get('country')
+
+        source_object = Sources(id,name, description, url, category,language, country)
+
+    return source_object
+
+
+def process_results(source_list):
+    """
+    Function processing the movie result and transforms them to list of objects
+    :param source_list: l
+    ist of dictionaries containing source details
+    :return:
+    source_results, a list of source objects
+    """
+
+    source_source = []
+    """
+    list to store source objects
+
+    """
+    for source_item in source_list:
+        """
+        loop through list of dictionaries using get method padsing in keys
+        to access values
+
+        """
+        id = source_item.get('id')
+        name = source_item.get('name')
+        description = source_item.get('description')
+        url = source_item.get('url')
+        category = source_item.get('category')
+        language = source_item.get('language')
+        country = source_item.get('country')
+
+        source_object = Sources(id, name, description, url, category, language, country)
+        """
+        values used to create movie object 
+
+        """
+        source_source.append(source_object)
+
+    return source_source
