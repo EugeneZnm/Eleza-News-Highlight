@@ -154,10 +154,12 @@ def process_articles(articles_list):
         urlToImage = article_item.get('urlToImage')
         publishedAt = article_item.get('publishedAt')
 
-    #     if title:
-    #         article_object = Articles(source_id, source_name, author, title, description,
-    #                                  url, urlToImage, publishedAt)
-    #
-    #         articles_out.append(article_object)
-    # return articles_out
+        if urlToImage: # if article has image object is created
+            article_object = Articles(source_id, source_name, author, title, description,
+                                     url, urlToImage, publishedAt)
+            """
+            Values used to create article object
+            """
+            articles_out.append(article_object)
+    return articles_out
 
