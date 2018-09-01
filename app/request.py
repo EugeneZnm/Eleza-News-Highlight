@@ -1,7 +1,7 @@
 import urllib
 import urllib.request, json
 
-from .models import Sources
+from .models import Sources, Articles
 
 api_key = None
 
@@ -9,9 +9,12 @@ base_url = None
 
 
 def configure_request(app):
-    global api_key, base_url
+    global api_key, base_url, articles_url, articles_key
     api_key = app.config['SOURCES_API_KEY']
     base_url = app.config['SOURCES_API_BASE_URL']
+    articles_url = app.config['ARTICLES_URL ']
+    articles_key = app.config['ARTICLES_KEY']
+
 
 
 def get_sources(category):
@@ -51,7 +54,7 @@ def get_sources(category):
             source_source = process_results(source_source_list)
             """
             process results function called taking in list of dictionary objects and returning
-            list of movie objects
+            list of source objects
             
             """
     # return list of movie objects
@@ -64,7 +67,7 @@ def get_source(articles):
     :param id:
     :return:
     """
-    get_source_details_url = base_url.format(id, api_key)
+    get_source_details_url = base_url.format(articles, api_key)
 
     with urllib.request.urlopen(get_source_details_url) as url:
         source_details_data = url.read()
@@ -92,7 +95,7 @@ def get_source(articles):
 
 def process_results(source_list):
     """
-    Function processing the movie result and transforms them to list of objects
+    Function processing the source result and transforms them to list of objects
     :param source_list: l
     ist of dictionaries containing source details
     :return:
@@ -106,7 +109,7 @@ def process_results(source_list):
     """
     for source_item in source_list:
         """
-        loop through list of dictionaries using get method padsing in keys
+        loop through list of dictionaries using get method passing in keys
         to access values
 
         """
@@ -126,3 +129,35 @@ def process_results(source_list):
         source_source.append(source_object)
 
     return source_source
+
+
+def process_articles(articles_list):
+    """
+    Function processing the articles results
+    :param articles_list:
+    :return:
+    """
+    articles_out = []
+
+    for article_item in articles_list:
+        """
+        looping through string of dictionaries using get method passing in keys
+        to access values
+        
+        """
+        source_id = article_item.get('source_id')
+        source_name = article_item.get('source_name')
+        author = article_item.get('author')
+        title = article_item.get('title')
+        description = article_item.get('description')
+        url = article_item.get('url')
+        urlToImage = article_item.get('urlToImage')
+        publishedAt = article_item.get('publishedAt')
+
+    #     if title:
+    #         article_object = Articles(source_id, source_name, author, title, description,
+    #                                  url, urlToImage, publishedAt)
+    #
+    #         articles_out.append(article_object)
+    # return articles_out
+
