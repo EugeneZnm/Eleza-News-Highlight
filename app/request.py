@@ -159,7 +159,12 @@ def process_articles(articles_list):
                                      url, urlToImage, publishedAt)
             """
             Values used to create article object
+            
             """
             articles_out.append(article_object)
+            """
+            returning list with articles
+            
+            """
     return articles_out
 
