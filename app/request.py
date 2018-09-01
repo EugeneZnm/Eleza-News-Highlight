@@ -16,7 +16,6 @@ def configure_request(app):
     articles_key = app.config['ARTICLES_KEY']
 
 
-
 def get_sources(category):
     """
     Function taking source arguments as categories
@@ -61,36 +60,36 @@ def get_sources(category):
     return source_source
 
 
-def get_source(articles):
-    """
-    function to return details of news source
-    :param id:
-    :return:
-    """
-    get_source_details_url = base_url.format(articles, api_key)
-
-    with urllib.request.urlopen(get_source_details_url) as url:
-        source_details_data = url.read()
-        source_details_response = json.loads(source_details_data)
-    """
-    creation of url and getting json data from url and converting it to dictionary
-    
-    """
-    source_object = None
-
-    if source_details_response:
-        id = source_details_response.get('id')
-        name = source_details_response.get('name')
-        author = source_details_response.get('author')
-        title = source_details_response.get('title')
-        description = source_details_response.get('description')
-        url = source_details_response.get('url')
-        urlToImage = source_details_response.get('urlToImage')
-        publishedAt = source_details_response.get('publishedAt')
-
-        source_object = Sources(id, name, author, title, description, url, urlToImage, publishedAt)
-
-    return source_object
+# def get_source(articles):
+#     """
+#     function to return details of news source
+#     :param id:
+#     :return:
+#     """
+#     get_source_details_url = base_url.format(articles, api_key)
+#
+#     with urllib.request.urlopen(get_source_details_url) as url:
+#         source_details_data = url.read()
+#         source_details_response = json.loads(source_details_data)
+#     """
+#     creation of url and getting json data from url and converting it to dictionary
+#
+#     """
+#     source_object = None
+#
+#     if source_details_response:
+#         id = source_details_response.get('id')
+#         name = source_details_response.get('name')
+#         author = source_details_response.get('author')
+#         title = source_details_response.get('title')
+#         description = source_details_response.get('description')
+#         url = source_details_response.get('url')
+#         urlToImage = source_details_response.get('urlToImage')
+#         publishedAt = source_details_response.get('publishedAt')
+#
+#         source_object = Sources(id, name, author, title, description, url, urlToImage, publishedAt)
+#
+#     return source_object
 
 
 def process_results(source_list):
