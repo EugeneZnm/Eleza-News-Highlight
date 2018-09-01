@@ -1,3 +1,4 @@
+{% extends 'base.html'%}
 {% import 'macros.html' as macro %}
 {% block content %}
 
@@ -5,7 +6,7 @@
         <div class="row">
             <!--Entertainment -->
             <div class="col-md-3">
-                <h3> Entertainment </h3>
+                <h3> ENTERTAINMENT </h3>
                  <ul>
                      <li>{{macro.displaySources(entertainment)}}</li>
                 </ul>
@@ -13,23 +14,23 @@
 
             <!-- General  -->
             <div class="col-md-3">
-                <h3> General </h3>
+                <h3> BUSINESS </h3>
                  <ul>
-                        <li>{{macro.displaySources(general)}}</li>
+                        <li>{{macro.displaySources(business)}}</li>
                 </ul>
             </div>
 
             <!-- Health -->
             <div class="col-md-3">
-            <h3> Health </h3>
+            <h3> TECHNOLOGY </h3>
                  <ul>
-                     <li>{{macro.displaySources(health)}}</li>
+                     <li>{{macro.displaySources(technology)}}</li>
                 </ul>
             </div>
 
             <!-- Science -->
             <div class="col-md-3">
-                <h3> Science </h3>
+                <h3> SCIENCE </h3>
                  <ul>
                      <li>{{macro.displaySources(science)}}</li>
                 </ul>

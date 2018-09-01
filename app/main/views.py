@@ -13,7 +13,7 @@ def index():
     """
 
     entertainment = get_sources('entertainment')
-    general = get_sources('general')
+    business = get_sources('business')
     health = get_sources('health')
     science = get_sources('science')
     technology = get_sources('technology')
@@ -24,7 +24,7 @@ def index():
     title = 'ELEZA - FRESH OFF THE PRESS'
 
     # result from get sources function passed to template
-    return render_template('index.html', title=title, entertainment=entertainment, general=general,
+    return render_template('index.html', title=title, entertainment=entertainment, business=business,
                            health=health, science=science, technology=technology)
 
 

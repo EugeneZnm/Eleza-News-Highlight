@@ -1,11 +1,21 @@
 {% macro displaySources(source_list)%}
     {% for source in source_list %}
         <div class ="card">
-            <h3>{{source.name}}</h3>
+            <div class="card header">
+                <h3>{{source.name}}</h3>
+            </div>
             <h5>{{source.description}}</h5>
-            <h5>{{source.category}}</h5>
-            <h5>{{source.language}}</h5>
-            <h5>{{source.country}}</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>category:{{source.category}}</h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>language:{{source.language}}</h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>country:{{source.country}}</h5>
+                </div>
+            </div>
             <a href="">{{source.url}}</a>
         </div>
     {% endfor %}
