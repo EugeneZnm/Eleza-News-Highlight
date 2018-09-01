@@ -28,13 +28,14 @@ def index():
                            health=health, science=science, technology=technology)
 
 
-@main.route('/source/<int:id>')
-def get_source(id):
+@main.route('/source/<id>')
+def get_articles(id):
     """
-    view sources page function returning the sources details page and its data
+    view sources page function returning the article page and its data
 
     """
-    source = get_source(id)
-    title = f'{source.title}'
+    article = get_articles(id)
+    title = f'{article.title}'
 
-    return render_template('index.html', title=title, source=source)
+    return render_template('articles.html', title=title, article=article)
+
