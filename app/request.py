@@ -7,13 +7,14 @@ api_key = None
 
 base_url = None
 
+articles_url = None
+
 
 def configure_request(app):
-    global api_key, base_url, articles_url, articles_key
+    global api_key, base_url, articles_url
     api_key = app.config['SOURCES_API_KEY']
     base_url = app.config['SOURCES_API_BASE_URL']
-    articles_url = app.config['ARTICLES_URL ']
-    articles_key = app.config['ARTICLES_KEY']
+    articles_url = app.config['ARTICLES_BASE_URL']
 
 
 def get_sources(category):
@@ -60,36 +61,28 @@ def get_sources(category):
     return source_source
 
 
-def get_source(articles):
+def get_article(id):
     """
     function to return details of news source
-    :param id:
+    :param articles:
     :return:
     """
-    get_source_details_url = base_url.format(articles, api_key)
+    get_article_details_url = articles_url.format(id, api_key)
 
-    with urllib.request.urlopen(get_source_details_url) as url:
-        source_details_data = url.read()
-        source_details_response = json.loads(source_details_data)
+    with urllib.request.urlopen(get_article_details_url) as url:
+        article_details_data = url.read()
+        article_details_response = json.loads(article_details_data)
     """
     creation of url and getting json data from url and converting it to dictionary
 
     """
-    source_object = None
+    article_object = None
 
-    if source_details_response:
-        id = source_details_response.get('id')
-        name = source_details_response.get('name')
-        author = source_details_response.get('author')
-        title = source_details_response.get('title')
-        description = source_details_response.get('description')
-        url = source_details_response.get('url')
-        urlToImage = source_details_response.get('urlToImage')
-        publishedAt = source_details_response.get('publishedAt')
+    if article_details_response['articles']:
+        article_object_list = article_details_response['articles']
+        article_object = process_articles(article_object_list)
 
-        source_object = Sources(id, name, author, title, description, url, urlToImage, publishedAt)
-
-    return source_object
+    return article_object
 
 
 def process_results(source_list):
@@ -144,18 +137,16 @@ def process_articles(articles_list):
         to access values
         
         """
-        source_id = article_item.get('source_id')
-        source_name = article_item.get('source_name')
+        id= article_item.get('id')
         author = article_item.get('author')
         title = article_item.get('title')
         description = article_item.get('description')
         url = article_item.get('url')
-        urlToImage = article_item.get('urlToImage')
-        publishedAt = article_item.get('publishedAt')
+        pic = article_item.get('urlToImage')
+        dates = article_item.get('publishedAt')
 
-        if urlToImage: # if article has image object is created
-            article_object = Articles(source_id, source_name, author, title, description,
-                                     url, urlToImage, publishedAt)
+        if pic: # if article has image object is created
+            article_object = Articles(id, author, title, description, url, pic, dates)
             """
             Values used to create article object
             

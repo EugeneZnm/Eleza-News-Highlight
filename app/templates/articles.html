@@ -1,0 +1,9 @@
+{% extends 'base.html'%}
+<!--{% import 'macros.html' as macro %}-->
+{% block content %}
+    <div>
+        <img src="{{macro.displayArticles(urlToImage)}}" alt="{{macro.displayArticles(title)}}">
+         {{macro.displayArticles(author}}
+    </div>
+
+{% endblock %}

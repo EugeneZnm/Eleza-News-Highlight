@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, url_for
-from ..request import get_sources, get_source
+from ..request import get_sources, get_article
 from . import main
+from ..models import Sources, Articles
 
 
 # views
@@ -9,7 +10,7 @@ from . import main
 def index():
     """
     view root returning the index page and its data
-    :return:
+    :return: categories: entertainment, business, health, science and technology
     """
 
     entertainment = get_sources('entertainment')
@@ -28,14 +29,13 @@ def index():
                            health=health, science=science, technology=technology)
 
 
-@main.route('/source/<id>')
-def get_articles(id):
+@main.route('/sources/<id>')
+def get_article(id):
     """
-    view sources page function returning the article page and its data
+    view articles page function returning the article page and its data
 
     """
-    article = get_articles(id)
+    article = get_article(id)
     title = f'{article.title}'
 
     return render_template('articles.html', title=title, article=article)
-
