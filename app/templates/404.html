@@ -1,0 +1,11 @@
+# extend base html
+{% extends 'base.html'%}
+# import macros
+
+{% import 'macros.html' as macro %}
+
+{% block content %}
+    <body>
+    {% include 'navbar.html' %}
+    </body>
+{% end block %}
