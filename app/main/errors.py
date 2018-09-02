@@ -8,7 +8,8 @@ from . import main
 @main.app_errorhandler(404)
 def four_four(error):
     """
-    Fuction rendering a 404 page
+    Function rendering a 404 page
     :param error:
     :return:
     """
+    render_template('404.html'), 404
