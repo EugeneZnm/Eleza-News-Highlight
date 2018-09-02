@@ -1,9 +1,13 @@
 {% extends 'base.html'%}
 <!--{% import 'macros.html' as macro %}-->
 {% block content %}
+    {% include 'navbar.html'%}
     <div>
-        <img src="{{macro.displayArticles(urlToImage)}}" alt="{{macro.displayArticles(title)}}">
-         {{macro.displayArticles(author}}
+        {{article.pic}}
+        {{article.title}}
+        {{article.description}}
+        <a href="{{article.url}}">Read Further</a>
+        <h5>published At:{{article.dates}}</h5>
     </div>
 
 {% endblock %}
