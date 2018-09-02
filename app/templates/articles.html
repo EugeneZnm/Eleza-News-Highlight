@@ -1,11 +1,16 @@
 {% extends 'base.html'%}
-{% import 'macros.html' as macro %}
 {% block content %}
     {% include 'navbar.html'%}
-    <div>
-        {{article.pic}}
-        {{article.title}}
-        {{article.description}}
+    <div class="panel">
+        <div class=" panel-thumbnail">
+            {{article.pic}}
+        </div>
+        <div class="panel-title">
+            {{article.title}}
+        </div>
+        <div class="well">
+            {{article.description}}
+        </div>
         <a href="{{article.url}}">Read Further</a>
         <h5>published At:{{article.dates}}</h5>
     </div>

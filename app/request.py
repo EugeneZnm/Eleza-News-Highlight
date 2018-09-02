@@ -68,9 +68,9 @@ def get_article(id):
     :param articles:
     :return:
     """
-    get_article_details_url = articles_url.format(id, api_key)
+    get_articles_details_url = articles_url.format(id, api_key)
 
-    with urllib.request.urlopen(get_article_details_url) as url:
+    with urllib.request.urlopen(get_articles_details_url) as url:
         article_details_data = url.read()
         article_details_response = json.loads(article_details_data)
     """
