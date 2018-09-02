@@ -1,8 +1,9 @@
 import urllib
 import urllib.request, json
-
+import sys
 from .models import Sources, Articles
 
+sys.setrecursionlimit(2000)
 api_key = None
 
 base_url = None
