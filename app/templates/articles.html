@@ -1,18 +1,47 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
+<!--{% import 'macros.html' as macro %}-->
 {% block content %}
-    {% include 'navbar.html'%}
-    <div class="panel">
-        <div class=" panel-thumbnail">
-            {{article.pic}}
+
+{% for article in article %}
+    <div>
+        <div class="row">
+            <div class="col-md-5">
+                <ul class="article">
+                    <div class="thumbnail">
+                        <img src="{{article.urlToImage}}" class="img-thumbnail" width="400" height="400" alt="uwfb">
+                        <div class="caption">
+                            <p class="lead">{{article.title}}</p>
+                            <h4 class="bg info">{{article.description}}</h4> <br>
+                            <p><a href="{{article.url}}"  class="btn btn-primary btn-lg" role="button">Learn more</a></p><br>
+                        </div>
+                    </div>
+                </ul>
+                <!--<ul class="panel panel-warning">-->
+                    <!--<p class="lead">{{article.title}}</p>-->
+                    <!--<img src="{{article.urlToImage}}" class="img-thumbnail" width="400" height="400" alt="uwfb">-->
+                <!--</ul>-->
+            </div>
+            <!--<div class="col-md-7">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-md-12">-->
+                        <!--<span class="panel panel-success">-->
+                            <!--<h3 class="panel bg-info">Written By: {{article.author}} <br><br>-->
+                                <!--<h4 class="bg info">{{article.description}}</h4> <br>-->
+                                <!--<p><a href="{{article.url}}"  class="btn btn-primary btn-lg" role="button">Learn more</a></p><br>-->
+                            <!--</h3>-->
+
+
+                        <!--</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
-        <div class="panel-title">
-            {{article.title}}
-        </div>
-        <div class="well">
-            {{article.description}}
-        </div>
-        <a href="{{article.url}}">Read Further</a>
-        <h5>published At:{{article.dates}}</h5>
     </div>
+
+
+
+
+{% endfor %}
+
 
 {% endblock %}

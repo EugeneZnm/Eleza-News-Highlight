@@ -3,8 +3,8 @@ import os
 
 
 class Config:
-    SOURCES_API_BASE_URL = "https://newsapi.org/v2/sources?category={}&apiKey={}"
-    ARTICLES_BASE_URL = "https://newsapi.org/v2/everything?sources={}&pageSize={}&apiKey={}"
+    SOURCES_API_BASE_URL = "https://newsapi.org/v2/sources?category={}&apiKey={}&language=en"
+    ARTICLES_BASE_URL = "https://newsapi.org/v2/everything?sources={}&apiKey={}"
     SOURCES_API_KEY = os.environ.get('SOURCES_API_KEY')
 
 

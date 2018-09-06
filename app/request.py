@@ -68,21 +68,56 @@ def get_article(id):
     :param articles:
     :return:
     """
-    get_articles_details_url = articles_url.format(id, api_key)
+    get_articles_details_url = articles_url.format(id,api_key)
 
     with urllib.request.urlopen(get_articles_details_url) as url:
         article_details_data = url.read()
         article_details_response = json.loads(article_details_data)
+        print(article_details_response)
+        """
+        creation of url and getting json data from url and converting it to dictionary
+        """
+        article_object = None
+
+        if article_details_response['articles']:
+            article_object_list = article_details_response['articles']
+            article_object = process_articles(article_object_list)
+
+    return article_object
+
+
+def process_articles(articles_list):
     """
-    creation of url and getting json data from url and converting it to dictionary
-
+    Function processing the articles results
+    :param articles_list:
+    :return:
     """
-    article_object = None
+    article_object = []
 
-    if article_details_response['articles']:
-        article_object_list = article_details_response['articles']
-        article_object = process_articles(article_object_list)
+    for article_item in articles_list:
+        """
+        looping through string of dictionaries using get method passing in keys
+        to access values
 
+        """
+        id = article_item.get('id')
+        author = article_item.get('author')
+        title = article_item.get('title')
+        description = article_item.get('description')
+        url = article_item.get('url')
+        urlToImage = article_item.get('urlToImage')
+        publishedAt = article_item.get('publishedAt')
+
+        articles_object = Articles(id, author, title, description, url, urlToImage, publishedAt)
+        """
+        Values used to create article object
+
+        """
+        article_object.append(articles_object)
+        """
+        returning list with articles
+
+        """
     return article_object
 
 
@@ -122,40 +157,3 @@ def process_results(source_list):
         source_source.append(source_object)
 
     return source_source
-
-
-def process_articles(articles_list):
-    """
-    Function processing the articles results
-    :param articles_list:
-    :return:
-    """
-    articles_out = []
-
-    for article_item in articles_list:
-        """
-        looping through string of dictionaries using get method passing in keys
-        to access values
-        
-        """
-        id= article_item.get('id')
-        author = article_item.get('author')
-        title = article_item.get('title')
-        description = article_item.get('description')
-        url = article_item.get('url')
-        pic = article_item.get('urlToImage')
-        dates = article_item.get('publishedAt')
-
-        if pic: # if article has image object is created
-            article_object = Articles(id, author, title, description, url, pic, dates)
-            """
-            Values used to create article object
-            
-            """
-            articles_out.append(article_object)
-            """
-            returning list with articles
-            
-            """
-    return articles_out
-

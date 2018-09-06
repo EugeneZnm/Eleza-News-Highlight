@@ -8,3 +8,7 @@ h3 {
  .names{
     text-align: center;
  }
+ul.article{
+    list-style: none;
+    padding-top: 20px;
+}
