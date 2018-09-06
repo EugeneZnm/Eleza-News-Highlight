@@ -33,7 +33,7 @@ This project was created on a debian linux platform but should work on other uni
 ## Cloning of the respository
    * In terminal:
    
-    $ git clone https://github.com/EugeneZnm/Eleza-News-Highlight
+    $ git clone https://eleza.herokuapp.com/
     
 ## Creating the Virtual Environment
 
