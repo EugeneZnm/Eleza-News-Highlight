@@ -8,38 +8,30 @@
             {{ super() }}
             <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
     {% endblock %}
-    <body>
+    <body style="background-color: #225475">
         <div class="row">
             <!--Entertainment -->
             <div class="col-md-3">
-                <h3> ENTERTAINMENT </h3>
-                 <ul class="list-group">
-                     <li class="list-group-item">{{macro.displaySources(entertainment)}}</li>
-                </ul>
+                <h3 class="list-group-item" style="background-color: #1cae74; width: 300px;">ENTERTAINMENT</h3>
+                <p style="margin-left: 10px">{{macro.displaySources(entertainment)}}</p>
             </div>
 
             <!-- General  -->
             <div class="col-md-3">
-                <h3> BUSINESS </h3>
-                 <ul class="list-group">
-                        <li class="list-group-item">{{macro.displaySources(business)}}</li>
-                </ul>
+                <h3 class="list-group-item" style="width: 300px; text-align:center;background-color: #1cae74"> BUSINESS </h3>
+                <p>{{macro.displaySources(business)}}</p>
             </div>
 
             <!-- Health -->
             <div class="col-md-3">
-            <h3> TECHNOLOGY </h3>
-                 <ul class="list-group">
-                     <li class="list-group-item">{{macro.displaySources(technology)}}</li>
-                </ul>
+            <h3 class="list-group-item" style="width: 300px; text-align:center; background-color: #1cae74"> TECHNOLOGY </h3>
+                <p>{{macro.displaySources(technology)}}</p>
             </div>
 
             <!-- Science -->
-            <div class="col-md-3">
-                <h3> SCIENCE </h3>
-                 <ul class="list-group">
-                     <li class="list-group-item">{{macro.displaySources(science)}}</li>
-                </ul>
+            <div class="col-md-3" style="width: 100px;">
+                <h3 class="list-group-item" style="width: 300px; text-align:center; background-color: #1cae74"> SCIENCE </h3>
+                <p>{{macro.displaySources(science)}}</p>
             </div>
         </div>
     </body>

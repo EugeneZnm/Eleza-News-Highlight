@@ -1,47 +1,32 @@
 {% extends 'base.html' %}
 <!--{% import 'macros.html' as macro %}-->
+
 {% block content %}
-
+<div style="background-color: #fba00f">
 {% for article in article %}
-    <div>
-        <div class="row">
-            <div class="col-md-5">
-                <ul class="article">
-                    <div class="thumbnail">
-                        <img src="{{article.urlToImage}}" class="img-thumbnail" width="400" height="400" alt="uwfb">
-                        <div class="caption">
-                            <p class="lead">{{article.title}}</p>
-                            <h4 class="bg info">{{article.description}}</h4> <br>
-                            <p><a href="{{article.url}}"  class="btn btn-primary btn-lg" role="button">Learn more</a></p><br>
+        <div>
+            <div style="display: table; width: 780px; margin-left: 15em;">
+                <ul style="list-style: none;">
+                    <li style="display: inline">
+                        <div class="card">
+                        <img src="{{article.urlToImage}}" class="card-img-top" width="400" height="400" alt="card image cap">
+                            <div class="card-body">
+                                <p class="card-title">{{article.title}}</p>
+                                <h4 class="bg info">{{article.description}}</h4> <br>
+                            </div>
+                            <div class="card-footer" style="background-color:#a6190e">
+                                <p style="text-align: center;"><a href="{{article.url}}"  class="btn btn-primary btn-lg" role="button" style="width:300px;">Learn more</a></p><br>
+                            </div>
                         </div>
-                    </div>
+                    </li>
                 </ul>
-                <!--<ul class="panel panel-warning">-->
-                    <!--<p class="lead">{{article.title}}</p>-->
-                    <!--<img src="{{article.urlToImage}}" class="img-thumbnail" width="400" height="400" alt="uwfb">-->
-                <!--</ul>-->
             </div>
-            <!--<div class="col-md-7">-->
-                <!--<div class="row">-->
-                    <!--<div class="col-md-12">-->
-                        <!--<span class="panel panel-success">-->
-                            <!--<h3 class="panel bg-info">Written By: {{article.author}} <br><br>-->
-                                <!--<h4 class="bg info">{{article.description}}</h4> <br>-->
-                                <!--<p><a href="{{article.url}}"  class="btn btn-primary btn-lg" role="button">Learn more</a></p><br>-->
-                            <!--</h3>-->
-
-
-                        <!--</span>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
         </div>
-    </div>
 
 
 
 
 {% endfor %}
-
+</div>
 
 {% endblock %}
